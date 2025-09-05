@@ -1,0 +1,47 @@
+.heading{
+    font-weight: normal;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.bold-text{
+    font-weight: bold;
+}
+
+.main{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container{
+    padding: 10px;
+    display: inline-block;
+}
+
+.nav-bar{
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+.nav-list{
+    list-style-type: none;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-list li{
+    display: inline;
+    margin: 0 15px;
+    font-size: 22px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: black;
+}
