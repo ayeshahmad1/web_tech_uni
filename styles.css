@@ -1,5 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .heading{
-    font-weight: normal;
+    font-weight: 300;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
@@ -12,6 +18,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 9999;
 }
 
 .container{
@@ -24,7 +32,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
 }
 
 
@@ -44,4 +51,120 @@
 .nav-list li a{
     text-decoration: none;
     color: black;
+}
+
+.image-container{
+    position: relative;
+    overflow: hidden;
+}
+
+.main-image{
+ z-index: -1;
+}
+
+.woman-image{
+    position: absolute;
+    top: -50px;
+    display: flex;
+    margin-left: 15%;
+    z-index: 0;
+}
+
+.glasses-image{
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    z-index: 1;
+}
+
+.sunpro-logo{
+    position: absolute;
+    top: 22%;
+    left: 61%;
+    z-index: 1;
+}
+
+.glasses-text{
+    position: absolute; 
+    display: flex;
+    bottom: 35%;
+    left: 58%;
+    z-index: 1;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+}
+
+.see-all-button{
+    position: absolute;
+    display: flex;
+    bottom: 25%;
+    left: 62%;
+    z-index: 1;
+    font-family: "Roboto", sans-serif;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 12px;
+    font-size: 50%;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.see-all-button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.lorem-text{
+    padding-top: 5%;
+    text-align: center;
+}
+
+.lorem-container{
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    padding: 12%;
+    font-size: 3rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+.lorem-container-2{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+.icons-container{
+    max-width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 75%;
+    align-items: center;
+    padding-left: 33.3%;
+    padding-top: 5%;
+}
+
+.icons-text{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: blue;
+}
+
+.icons-text li{
+    display: inline-flex;
+    align-items: center;
+    background-color: red;
+}
+
+.icons-text li a{
+    display: inline-flex;
+    text-decoration: none;
+    color: black;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
 }
