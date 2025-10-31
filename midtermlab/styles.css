@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-weight: 300;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.main {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.container {
+  padding: 10px;
+  display: inline-block;
+}
+
+.nav-bar {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 50px;
+}
+
+.nav-list li {
+  display: inline-flex;
+  margin: 0 15px;
+  font-size: 22px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+}
+
+.cv-section {
+  margin: 40px 0;
+  padding-left: 2%;
+  font-family:"Roboto", Arial, Helvetica, sans-serif;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.cv-elements {
+    margin: 2%;
+    transition: background 0.3s ease;
+}
+
+
+.content{
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.cv-elements:hover .content{
+    opacity: 1;
+}
+
+.site-footer {
+  background-color: white;
+  border-top: 1px solid white;
+}
+
+.newsletter {
+  padding: 60px 16px 10px;
+  text-align: center;
+}
+
+.newsletter-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.newsletter-input {
+  width: min(520px, 70vw);
+  padding: 12px 14px;
+  outline: none;
+  font-family: "Lato", sans-serif;
+}
+
+.newsletter-btn {
+  padding: 12px 20px;
+  background: #111;
+  color: white;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.newsletter-btn:hover {
+  background: black;
+  opacity: 0.9;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 40px 16px 60px;
+}
+
+.footer-heading {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.footer-list {
+  list-style: none;
+}
+
+.footer-list li + li {
+  margin-top: 10px;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color: grey;
+  font-family: "Lato", sans-serif;
+}
+
+.footer-list a:hover {
+  color: grey;
+}
