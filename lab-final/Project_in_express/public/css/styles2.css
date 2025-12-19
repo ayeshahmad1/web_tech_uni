@@ -1,0 +1,134 @@
+.hero-company {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-company-img {
+    width: 100%;
+    display: block;
+  }
+  .hero-company-text {
+    position: absolute;
+    bottom: 12%;
+    left: 8%;
+    color: white;
+    font-family: "Roboto", sans-serif;
+  }
+  .hero-company-text h2 {
+    font-size: 3rem;
+    font-weight: 900;
+  }
+  .hero-company-text p {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  .about-section {
+    display:flex;
+    gap: 40px;
+    padding: 8%;
+  }
+
+  .about-left,
+  .about-right {
+    width: 33%;
+    font-family: "Lato", sans-serif;
+  }
+  .about-left h3 {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .about-left p {
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .about-icon {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin: 24px 0;
+  }
+  .about-icon img {
+    width: 64px;
+    height: 64px;
+  }
+  .about-icon h4 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+  }
+  .about-care-img {
+    width: 100%;
+    display: block;
+    margin-bottom: 24px;
+  }
+  .care-box {
+    background: #f3f3f3;
+    padding: 24px;
+    line-height: 1.6;
+  }
+  .care-box h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+  
+  .story-section {
+    display: flex;
+    gap: 40px;
+    padding: 60px 8%;
+    background: #ffffff;
+  }
+  .story-text,
+  .story-side {
+    flex: 1;
+    font-family: "Lato", sans-serif;
+    line-height: 1.7;
+  }
+  .story-text h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+  
+  .parallax-strip {
+    background-image: url("./Resources/our_company_parallax.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+  }
+  .parallax-strip::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+  }
+  .parallax-inner {
+    position: relative;
+    z-index: 1;
+  }
+  .parallax-inner h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    margin-bottom: 12px;
+  }
+  .parallax-inner p {
+    font-family: "Lato", sans-serif;
+    margin-bottom: 20px;
+  }
+  .parallax-btn {
+    background: white;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 16px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  .parallax-btn:hover {
+    background: black;
+    color: white;
+    transition: 0.3s;
+  }

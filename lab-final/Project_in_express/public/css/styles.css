@@ -1,0 +1,448 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-weight: 300;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.main {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.container {
+  padding: 10px;
+  display: inline-block;
+}
+
+.nav-bar {
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 50px;
+}
+
+.nav-list li {
+  display: inline-flex;
+  margin: 0 15px;
+  font-size: 22px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-image {
+  z-index: -1;
+}
+
+.woman-image {
+  position: absolute;
+  top: -50px;
+  display: flex;
+  margin-left: 15%;
+  z-index: 0;
+}
+
+.glasses-image {
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  z-index: 1;
+}
+
+.sunpro-logo {
+  position: absolute;
+  top: 22%;
+  left: 61%;
+  z-index: 1;
+}
+
+.glasses-text {
+  position: absolute;
+  display: flex;
+  bottom: 35%;
+  left: 58%;
+  z-index: 1;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.see-all-button {
+  position: absolute;
+  display: flex;
+  bottom: 25%;
+  left: 62%;
+  z-index: 1;
+  font-family: "Roboto", sans-serif;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 12px;
+  font-size: 50%;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.see-all-button:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+}
+
+.lorem-text {
+  padding-top: 5%;
+  text-align: center;
+}
+
+.lorem-container {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  padding: 12%;
+  font-size: 3rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.lorem-container-2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 1.5;
+  letter-spacing: 2px;
+}
+
+.icons-container {
+  max-width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 75%;
+  align-items: center;
+  padding-left: 33.3%;
+  padding-top: 5%;
+}
+
+.icons-text-container {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+
+.icons-text-container ul {
+  list-style-type: none;
+  display: flex;
+  gap: 60%;
+  justify-content: space-evenly;
+  padding-left: 32.8%;
+  padding-top: 1%;
+  padding-bottom: 5%;
+}
+
+.icons-text-container ul a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: black;
+  font-weight: 700;
+}
+
+.home-page-images {
+  display: flex;
+}
+
+.cat-image1 {
+  width: 33.3%;
+  max-height: 80%;
+  background-image: url("./Resources/home_glasses_cat1.jpg");
+  background-size: 150%;
+  background-position: center;
+  padding-top: 50%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cat-image1-sidetext {
+  position: absolute;
+  top: 3%;
+  right: 5%;
+  height: 25%;
+  z-index: 9999;
+}
+
+.cat-image2-sidetext {
+  background-color: #312d2b;
+  width: 33.3%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  gap: 20px;
+}
+
+.cat-text {
+  color: white;
+  font-weight: 200;
+  font-family: "Roboto", sans-serif;
+  padding: 10%;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.cat-text-bold {
+  font-weight: 900;
+}
+
+.cat-para {
+  color: white;
+  width: 180%;
+}
+
+.cat-para p {
+  text-align: center;
+}
+
+.cat-button {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.cat-button:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+}
+
+.cat-image3-text {
+  background-color: #edefef;
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 5%;
+}
+
+.cat-image3-text-inner {
+  padding: 10%;
+}
+
+.cat-image3-text-inner h2 {
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+}
+
+.cat-image-3-para p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.cat-image3-button {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.cat-image3-button:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+}
+
+.product-carousel {
+  background: #fff;
+  padding: 40px 20px;
+}
+
+.product-carousel .product-img {
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.product-carousel h2 {
+  letter-spacing: 0.2rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.product-carousel p.lead {
+  max-width: 500px;
+  margin: 0 auto 20px;
+  color: #6c757d;
+}
+
+.carousel-indicators {
+  position: static;
+  margin-top: 10px;
+}
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d7d7d7;
+  margin: 0 6px;
+}
+.carousel-indicators .active {
+  background-color: #111;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 2rem;
+  height: 2rem;
+  filter: invert(40%);
+}
+
+.right-content {
+  background: #222;
+  color: #fff;
+  padding: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.right-content h2 {
+  font-weight: 800;
+}
+
+.carousel-container{
+    display: flex;
+    width: 60%;
+}
+
+.just-watch-text {
+  background-color: black;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  padding: 5% 0;
+}
+
+.site-footer {
+  background-color: #f7f8fa;
+  border-top: 1px solid #e6e8eb;
+}
+
+.newsletter {
+  padding: 60px 16px 10px;
+  text-align: center;
+}
+
+.newsletter-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+  margin-bottom: 24px;
+}
+
+.newsletter-form {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.newsletter-input {
+  width: min(520px, 70vw);
+  padding: 12px 14px;
+  border: 1px solid #cfd3d7;
+  outline: none;
+  font-family: "Lato", sans-serif;
+}
+
+.newsletter-btn {
+  padding: 12px 20px;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.newsletter-btn:hover {
+  background: #000;
+  opacity: 0.9;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 40px 16px 60px;
+}
+
+.footer-heading {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.footer-list {
+  list-style: none;
+}
+
+.footer-list li + li {
+  margin-top: 10px;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color: #4a5563;
+  font-family: "Lato", sans-serif;
+}
+
+.footer-list a:hover {
+  color: #1f2937;
+}
+
