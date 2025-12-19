@@ -20,8 +20,7 @@ router.put("/:id", async function (req, res, next) {
 });
 router.delete("/:id", async function (req, res, next) {
   try {
-    let catagories = await Category.findById(req.params.id);
-    await catagories.delete();
+    await Category.deleteOne({ _id: req.params.id });
     return res.send("deleted");
   } catch (err) {
     return res.status(400).send("Invalid Id");

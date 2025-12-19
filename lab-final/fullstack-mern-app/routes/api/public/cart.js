@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const Order = require("../models/Order");
-const checkCartNotEmpty = require("../middlewares/checkCartNotEmpty");
+const Order = require("../../../models/Order");
+const checkCartNotEmpty = require("../../../middlewares/checkCartNotEmpty");
 
 router.get("/checkout", checkCartNotEmpty, (req, res) => {
   const cart = req.session.cart;
@@ -25,9 +25,8 @@ router.post("/checkout", checkCartNotEmpty, async (req, res) => {
   const order = new Order({
     customerName,
     email,
-    items: cart.map(item => ({
-      productId: item._id,
-      name: item.name,
+    cartItems: cart.map(item => ({
+      product: item.name,
       price: item.price,
       quantity: item.quantity
     })),

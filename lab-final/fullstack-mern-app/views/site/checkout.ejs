@@ -1,31 +1,66 @@
 <h1>Checkout</h1>
 
-<table border="1" width="100%">
-  <tr>
-    <th>Product</th>
-    <th>Price</th>
-    <th>Qty</th>
-  </tr>
-
-  <% cart.forEach(item => { %>
+<div style="margin: 20px 0;">
+  <h3>Order Summary</h3>
+  
+  <table border="1" width="100%">
     <tr>
-      <td><%= item.name %></td>
-      <td><%= item.price %></td>
-      <td><%= item.quantity %></td>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
     </tr>
-  <% }) %>
-</table>
 
-<h3>Total: Rs <%= total %></h3>
+    <% products.forEach(product => { %>
+      <tr>
+        <td><%= product.name %></td>
+        <td>Rs <%= product.price %></td>
+        <td>1</td>
+        <td>Rs <%= product.price %></td>
+      </tr>
+    <% }) %>
+  </table>
+
+  <h3 style="text-align: right;">Total Amount: Rs <%= total %></h3>
+</div>
 
 <hr>
 
-<form method="POST" action="/checkout">
-  <label>Name</label><br>
-  <input type="text" name="customerName" required><br><br>
+<div style="max-width: 500px;">
+  <h3>Customer Information</h3>
+  
+  <form method="POST" action="/checkout">
+    <div style="margin-bottom: 15px;">
+      <label for="customerName">Full Name:</label><br>
+      <input 
+        type="text" 
+        id="customerName"
+        name="customerName" 
+        required
+        placeholder="Enter your full name"
+        style="width: 100%; padding: 8px; font-size: 14px;"
+      ><br>
+    </div>
 
-  <label>Email</label><br>
-  <input type="email" name="email" required><br><br>
+    <div style="margin-bottom: 15px;">
+      <label for="email">Email Address:</label><br>
+      <input 
+        type="email" 
+        id="email"
+        name="email" 
+        required
+        placeholder="Enter your email"
+        style="width: 100%; padding: 8px; font-size: 14px;"
+      ><br>
+    </div>
 
-  <button type="submit">Place Order</button>
-</form>
+    <div style="margin-top: 20px;">
+      <button type="submit" style="padding: 10px 20px; font-size: 16px; background-color: #28a745; color: white; border: none; cursor: pointer;">
+        Place Order
+      </button>
+      <a href="/cart" style="margin-left: 10px; padding: 10px 20px; font-size: 16px; background-color: #6c757d; color: white; text-decoration: none; display: inline-block;">
+        Back to Cart
+      </a>
+    </div>
+  </form>
+</div>

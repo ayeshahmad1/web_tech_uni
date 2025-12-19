@@ -42,7 +42,7 @@ const Login = () => {
                 .post("/api/auth", user)
                 .then((res) => {
                   console.log(res.data);
-                  localStorage.setItem("jwt_access_token", res.data);
+                  localStorage.setItem("jwt_access_token", res.data.token);
                   window.location.replace("/admin");
                 })
                 .catch((e) => {

@@ -1,3 +1,10 @@
+const express = require("express");
+const router = express.Router();
+const User = require("../../models/User");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const config = require("config");
+
 router.post("/", async function (req, res) {
   let user = await User.findOne({ email: req.body.email });
 
@@ -29,3 +36,4 @@ router.post("/", async function (req, res) {
   return res.json({ token });
 });
 
+module.exports = router;

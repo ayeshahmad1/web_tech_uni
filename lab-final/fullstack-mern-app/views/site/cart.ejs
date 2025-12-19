@@ -1,31 +1,43 @@
-<a href="/" class="btn btn-info">Continue Shopping</a>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Product Name</th>
-            <th>Product Price</th>
-        </tr>
-
-    </thead>
-    <tbody>
-        <% for(var i=0;i<products.length;i++) {let product = products[i];%>
+<div style="margin: 20px 0;">
+  <h1>Shopping Cart</h1>
+  
+  <% if (products.length === 0) { %>
+    <div style="text-align: center; padding: 40px;">
+      <p style="font-size: 18px; color: #666;">Your cart is empty</p>
+      <a href="/" class="btn btn-info">Continue Shopping</a>
+    </div>
+  <% } else { %>
+    
+    <table class="table table-hover">
+        <thead>
             <tr>
-                <td><%=product.name  %> </td>
-                <td><%=product.price  %> </td>
+                <th>Product Name</th>
+                <th>Product Price</th>
             </tr>
-            <% } %> 
-            <tfoot>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<products.length; i++) { let product = products[i]; %>
                 <tr>
+                    <td><%= product.name %></td>
+                    <td>Rs <%= product.price %></td>
+                </tr>
+            <% } %>
+            <tfoot>
+                <tr style="font-weight: bold; background-color: #f8f9fa;">
                     <td>Total:</td>
-                    <td><%=total  %> </td>
+                    <td>Rs <%= total %></td>
                 </tr>
             </tfoot>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 
-<form>
-  <button type="submit" class="btn btn-success">
-    Checkout
-  </button>
-</form>
+    <div style="margin-top: 20px;">
+      <a href="/" class="btn btn-info">Continue Shopping</a>
+      <a href="/checkout" class="btn btn-success" style="margin-left: 10px;">
+        Proceed to Checkout
+      </a>
+    </div>
+    
+  <% } %>
+</div>
 

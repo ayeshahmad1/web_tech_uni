@@ -1,0 +1,112 @@
+<div style="padding: 20px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+    <h1>Orders Management</h1>
+    <a href="/" class="btn btn-secondary">Back to Dashboard</a>
+  </div>
+
+  <% if (flash && flash.success) { %>
+    <div style="background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 12px; border-radius: 4px; margin-bottom: 20px;">
+      <%= flash.success %>
+    </div>
+  <% } %>
+
+  <% if (flash && flash.danger) { %>
+    <div style="background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 12px; border-radius: 4px; margin-bottom: 20px;">
+      <%= flash.danger %>
+    </div>
+  <% } %>
+
+  <div style="overflow-x: auto;">
+    <% if (orders && orders.length > 0) { %>
+      <table style="width: 100%; border-collapse: collapse; background-color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        <thead>
+          <tr style="background-color: #f8f9fa; border-bottom: 2px solid #dee2e6;">
+            <th style="padding: 15px; text-align: left; font-weight: bold;">Order ID</th>
+            <th style="padding: 15px; text-align: left; font-weight: bold;">Customer Name</th>
+            <th style="padding: 15px; text-align: left; font-weight: bold;">Email</th>
+            <th style="padding: 15px; text-align: left; font-weight: bold;">Total Amount</th>
+            <th style="padding: 15px; text-align: left; font-weight: bold;">Status</th>
+            <th style="padding: 15px; text-align: left; font-weight: bold;">Order Date</th>
+            <th style="padding: 15px; text-align: left; font-weight: bold;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% orders.forEach((order, index) => { %>
+            <tr style="border-bottom: 1px solid #dee2e6; <%= index % 2 === 0 ? 'background-color: #f8f9fa;' : '' %>">
+              <td style="padding: 15px;">
+                <strong><%= order._id %></strong>
+              </td>
+              <td style="padding: 15px;">
+                <%= order.customerName %>
+              </td>
+              <td style="padding: 15px;">
+                <%= order.email %>
+              </td>
+              <td style="padding: 15px;">
+                <strong>Rs <%= order.totalAmount.toFixed(2) %></strong>
+              </td>
+              <td style="padding: 15px;">
+                <% 
+                  let statusColor = '#ffc107';
+                  let statusText = 'Pending';
+                  if (order.orderStatus === 'Confirmed') {
+                    statusColor = '#28a745';
+                    statusText = 'Confirmed';
+                  } else if (order.orderStatus === 'Cancelled') {
+                    statusColor = '#dc3545';
+                    statusText = 'Cancelled';
+                  }
+                %>
+                <span style="background-color: <%= statusColor %>; color: white; padding: 6px 12px; border-radius: 20px; font-size: 14px; font-weight: bold;">
+                  <%= statusText %>
+                </span>
+              </td>
+              <td style="padding: 15px;">
+                <%= new Date(order.createdDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) %>
+              </td>
+              <td style="padding: 15px;">
+                <div style="display: flex; gap: 8px;">
+                  <% if (order.orderStatus !== 'Confirmed' && order.orderStatus !== 'Cancelled') { %>
+                    <form method="POST" action="/admin/orders/<%= order._id %>/confirm" style="display: inline;">
+                      <button type="submit" style="background-color: #28a745; color: white; padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
+                        Confirm
+                      </button>
+                    </form>
+                  <% } %>
+                  
+                  <% if (order.orderStatus !== 'Cancelled') { %>
+                    <form method="POST" action="/admin/orders/<%= order._id %>/cancel" style="display: inline;" onsubmit="return confirm('Are you sure you want to cancel this order?');">
+                      <button type="submit" style="background-color: #dc3545; color: white; padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">
+                        Cancel
+                      </button>
+                    </form>
+                  <% } %>
+
+                  <a href="/admin/orders/<%= order._id %>/details" style="background-color: #007bff; color: white; padding: 6px 12px; border: none; border-radius: 4px; text-decoration: none; font-size: 12px; display: inline-block;">
+                    View Details
+                  </a>
+                </div>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <div style="background-color: #f8f9fa; padding: 40px; text-align: center; border-radius: 4px;">
+        <p style="font-size: 18px; color: #666;">No orders found</p>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+<style>
+  button:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+  
+  a:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+</style>

@@ -40,13 +40,23 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
   "/super-admin",
+  sessionAuth,
+  adminOnly,
   superAdminMiddleware,
   require("./routes/super-admin/dashbosrd")
 );
 app.use(
   "/super-admin",
+  sessionAuth,
+  adminOnly,
   superAdminMiddleware,
   require("./routes/super-admin/products")
+);
+app.use(
+  "/admin/orders",
+  sessionAuth,
+  adminOnly,
+  require("./routes/admin/orders")
 );
 app.use("/api/public/products", require("./routes/api/public/products"));
 app.use("/api/categories", require("./routes/api/catagories"));
@@ -78,38 +88,6 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
-app.post("/checkout", (req, res) => {
-  if (req.session) {
-    req.session.cart = [];
-  }
-
-  res.redirect("http://localhost:4000");
-});
-
-app.get("/checkout", (req, res) => {
-  const cart = req.session.cart || [];
-  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-  res.render("checkout", {
-    cart,
-    total
-  });
-});
-
-app.use("/", require("./routes/cart"));
-
-app.use(
-  "/super-admin",
-  adminOnly,
-  require("./routes/super-admin/dashbosrd")
-);
-
-app.use(
-  "/super-admin",
-  adminOnly,
-  require("./routes/super-admin/products")
-);
 
 // startCronJobs();
 module.exports = app;

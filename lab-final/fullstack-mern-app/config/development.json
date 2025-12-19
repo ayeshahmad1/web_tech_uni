@@ -1,6 +1,6 @@
 {
   "jwtPrivateKey": "myPrivateKey",
   "db": "mongodb://localhost:27017/webtechlab",
-  "port": "4000",
+  "port": "8000",
   "sessionSecret": "MySessionSecret"
 }

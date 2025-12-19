@@ -1,13 +1,9 @@
 var express = require("express");
 var router = express.Router();
-var Catagories = require("../../models/Catagories");
+var Category = require("../../models/Category");
 
 router.get("/", async function (req, res, next) {
-  console.log("inside");
-  setTimeout(async () => {
-    let catagories = await Catagories.find();
-
-    res.send(catagories);
-  }, 5000);
+  let catagories = await Category.find();
+  res.send(catagories);
 });
 module.exports = router;
