@@ -28,10 +28,16 @@ app.use(expressLayouts);
 
 
 app.get("/api/students", async (req, res) => {
-  const product = await StudentModel.find();
-  res.send(product);
+  const students = await StudentModel.find();
+  res.send(students);
 });
 
+app.post("/api/students", async (req, res) => {
+  let data = req.body;
+  let record = new ProductModel(data);
+  await record.save();
+  res.send(record);
+});
 
 
 app.get("/index", (req, res) => {

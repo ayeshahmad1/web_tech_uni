@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+.brands-hero {
+    padding: 80px 10%;
+    text-align: left;
+}
+
+.brands-hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+}
+
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 40px 10% 80px;
+    align-items: center;
+}
+
+.brand-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    border: 1px solid #eee;
+}
+
+.brand-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .brands-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brands-hero h1 {
+        font-size: 2.2rem;
+    }
+}

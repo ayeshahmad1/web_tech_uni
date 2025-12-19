@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Now</title>
+    <link rel="stylesheet" href="/css/styles6.css">
+</head>
+<body></body>
+
+<h1><%= pagetitle %></h1>
+
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+
+    <li class="page-item <%= page === 1 ? 'disabled' : '' %>">
+      <a class="page-link" href="/buy-now?page=<%= page - 1 %>">Previous</a>
+    </li>
+
+
+    <li class="page-item <%= page === totalPages ? 'disabled' : '' %>">
+      <a class="page-link" href="/buy-now?page=<%= page + 1 %>">Next</a>
+    </li>
+
+  </ul>
+</nav>
+
+<span>Showing page <%= page %> of <%= totalPages %></span>
+
+
+<div class="products">
+  <% products.forEach(p => { %>
+    <div class="product-card">
+        <a href="http://localhost:4000">
+      <img src="http://localhost:4000/images/uploaded/<%= p.image %>">
+        </a>
+      <h3><%= p.name %></h3>
+      <p>Rs <%= p.price %></p>
+    </div>
+  <% }) %>
+</div>
+
+
+</body>
+</html>
